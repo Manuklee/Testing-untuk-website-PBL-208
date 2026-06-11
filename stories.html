@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Your Story</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/stories.css">
+  <style>
+    .story.coming-soon {
+      opacity: 0.7;
+    }
+    .story.coming-soon a {
+      pointer-events: none;
+      cursor: default;
+    }
+    .story.coming-soon img {
+      filter: grayscale(1);
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-button">
+  🔙 Kembali
+</a>
+
+  <h1>Silahkan pilih cerita 📚</h1>
+
+  <div class="story-container">
+
+    <div class="story">
+      <a href="setup1.html">
+        <img src="images/story1/cover.jpg" alt="Sebungkus Mie dari Ali">
+      </a>
+      <p>Sebungkus Mie dari Ali</p>
+    </div>
+
+    <div class="story coming-soon">
+      <a href="#">
+        <img src="images/story2/cover.jpg" alt="Coming Soon">
+      </a>
+      <p>Coming soon</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

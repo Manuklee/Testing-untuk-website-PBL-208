@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Story Editor</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="topbar">
+  <button id="prevPage">⬅ Prev</button>
+
+  <span id="pageLabel">
+    Page 1
+  </span>
+
+  <button id="nextPage">Next ➡</button>
+
+  <button id="addNarration">
+    ➕ Narration
+  </button>
+
+  <button id="addSpeech">
+    💬 Speech Bubble
+  </button>
+
+  <button id="exportBtn">
+    💾 Export JSON
+  </button>
+</div>
+
+<div class="editor-container">
+
+  <div class="page-view" id="pageView">
+
+    <img id="pageImage">
+
+    <div id="overlayLayer"></div>
+
+  </div>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

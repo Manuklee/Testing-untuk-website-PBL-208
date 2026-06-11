@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kisah Utsman bin Affan</title>
+  <link rel="stylesheet" href="css/reader2.css">
+</head>
+<body>
+
+<div class="viewer">
+  <div class="book" id="bookContainer">
+    <img id="bgPage" class="base-layer" src="" alt="">
+    <img id="comicPage" class="mid-layer" src="" alt="">
+
+    <div class="flip-layer">
+      <div class="flip-paper" id="flipPaper">
+        <div class="flip-side front">
+          <img id="flipFront" src="" alt="">
+        </div>
+        <div class="flip-side back">
+          <img id="flipBack" src="" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <a href="stories.html">
+    <button onclick="handleClickNoAction()">🔙 Back</button>
+  </a>
+  <button id="firstBtn" class="circle-btn" onclick="handleClick(goToFirst)">⏮</button>
+  <button id="prevBtn" class="circle-btn" onclick="handleClick(prevPage)">⬅</button>
+  
+  <div class="center-controls">
+    <span id="pageIndicator">1 / 2</span>
+    <button onclick="handleClick(jumpToPage)">🔢 Jump</button>
+  </div>
+  
+  <button id="nextBtn" class="circle-btn" onclick="handleClick(nextPage)">➡</button>
+  <button id="lastBtn" class="circle-btn" onclick="handleClick(goToLast)">⏭</button>
+  <button onclick="handleClick(playAudio)">🔊 Play</button>
+</div>
+
+<button id="creditsFloat" onclick="handleClick(goToCredits)" style="display:none;">
+  🎬 Credits
+</button>
+
+<script>
+let currentPage = 1;
+const totalPages = 2; 
+let autoPlay = localStorage.getItem("autoPlay") === "true";
+let clickSound = new Audio("audio/ui/click.mp3");
+let currentAudio = null;
+let isAnimating = false;
+
+const bookContainer = document.getElementById("bookContainer");
+const comicPage = document.getElementById("comicPage");
+const bgPage = document.getElementById("bgPage");
+const flipPaper = document.getElementById("flipPaper");
+const flipFront = document.getElementById("flipFront");
+const flipBack = document.getElementById("flipBack");
+
+function handleClick(action) {
+  if (isAnimating) return;
+  clickSound.currentTime = 0;
+  clickSound.play().catch(() => {});
+  action();
+}
+
+function handleClickNoAction() {
+  clickSound.currentTime = 0;
+  clickSound.play().catch(() => {});
+}
+
+function updateUI() {
+  document.getElementById("pageIndicator").innerText = `${currentPage} / ${totalPages}`;
+  document.getElementById("prevBtn").disabled = currentPage === 1;
+  document.getElementById("firstBtn").disabled = currentPage === 1;
+  document.getElementById("nextBtn").disabled = currentPage === totalPages;
+  document.getElementById("lastBtn").disabled = currentPage === totalPages;
+  document.getElementById("creditsFloat").style.display = currentPage === totalPages ? "block" : "none";
+}
+
+function doFlip(direction, newPage) {
+  isAnimating = true;
+  stopAudio();
+  
+  const currentSrc = `images/story1/spread${currentPage}.jpg`;
+  const nextSrc = `images/story1/spread${newPage}.jpg`;
+
+  bgPage.src = nextSrc;
+  flipFront.src = currentSrc;
+  flipBack.src = nextSrc;
+
+  bookContainer.classList.add(`flipping-${direction}`);
+  flipPaper.className = `flip-paper show ${direction}`;
+
+  setTimeout(() => { flipPaper.classList.add("animate"); }, 20);
+
+  setTimeout(() => {
+    currentPage = newPage;
+    comicPage.src = nextSrc;
+    updateUI();
+    bookContainer.classList.remove("flipping-next", "flipping-prev");
+    flipPaper.className = "flip-paper";
+    isAnimating = false;
+    if (autoPlay) playAudio();
+  }, 900);
+}
+
+function nextPage() { if (currentPage < totalPages && !isAnimating) doFlip("next", currentPage + 1); }
+function prevPage() { if (currentPage > 1 && !isAnimating) doFlip("prev", currentPage - 1); }
+
+function stopAudio() {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.onended = null;
+    currentAudio = null;
+  }
+}
+
+function playAudio() {
+  stopAudio();
+  currentAudio = new Audio(`audio/story1/page${currentPage}.left.mp3`);
+  currentAudio.onended = function() {
+    currentAudio = new Audio(`audio/story1/page${currentPage}.right.mp3`);
+    currentAudio.play().catch(() => {});
+    currentAudio.onended = () => { currentAudio = null; };
+  };
+  currentAudio.play().catch(() => {});
+}
+
+function goToFirst() { 
+  if (currentPage === 1) return;
+  currentPage = 1; 
+  comicPage.src = `images/story1/spread${currentPage}.jpg`;
+  updateUI(); 
+  stopAudio();
+  if (autoPlay) playAudio();
+}
+
+function goToLast() { 
+  if (currentPage === totalPages) return;
+  currentPage = totalPages; 
+  comicPage.src = `images/story1/spread${currentPage}.jpg`;
+  updateUI(); 
+  stopAudio();
+  if (autoPlay) playAudio();
+}
+
+function jumpToPage() {
+  let page = parseInt(prompt("Enter page:"), 10);
+  if (page >= 1 && page <= totalPages) { 
+    currentPage = page; 
+    comicPage.src = `images/story1/spread${currentPage}.jpg`;
+    updateUI(); 
+    stopAudio();
+    if (autoPlay) playAudio();
+  }
+}
+
+function goToCredits() {
+  localStorage.setItem("lastPage", currentPage);
+  localStorage.setItem("lastStory", "story1.html"); 
+  window.location.href = "credits.html";
+}
+
+window.onload = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const startPage = urlParams.get('page');
+  if (startPage) { currentPage = parseInt(startPage, 10); }
+
+  comicPage.src = `images/story1/spread${currentPage}.jpg`;
+  updateUI();
+  if (autoPlay) playAudio();
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Credits</title>
+  <link rel="stylesheet" href="css/global.css">
+
+  <style>
+    body {
+      margin: 0;
+      text-align: center;
+      padding: 40px 20px 120px; /* space for bottom buttons */
+      font-family: Arial, sans-serif;
+    }
+
+    .credit-image {
+      margin-top: 20px;
+      max-width: 80%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #fef6e4;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .bottom-bar button {
+      padding: 12px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      background: #a0e7e5;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.2s;
+    }
+
+    .bottom-bar button:hover {
+      background: #b4f8c8;
+      transform: translateY(-3px);
+    }
+
+    .bottom-bar button:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎬 End Credits</h1>
+
+  <!-- IMAGE AREA -->
+  <img class="credit-image" src="images/credits/credits.jpg" alt="Credits Image">
+
+  <h3>Diciptakan oleh: PBL-208</h3>
+
+  <div class="bottom-bar">
+    <button onclick="returnToStory()">🔙 Kembali ke cerita</button>
+
+    <a href="stories.html">
+      <button>📚 Pilih cerita lainnya</button>
+    </a>
+  </div>
+
+  <script>
+    function returnToStory() {
+      let page = localStorage.getItem("lastPage") || 1;
+      let story = localStorage.getItem("lastStory") || "story1.html";
+      window.location.href = story + "?page=" + page;
+    }
+  </script>
+
+</body>
+</html>

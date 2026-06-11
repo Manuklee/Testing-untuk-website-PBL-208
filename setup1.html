@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Setup - Kisah Ali & Utsman</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: pink;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .back-nav {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .back-btn {
+      padding: 12px 20px;
+      background: #a0e7e5;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover { background: #b4f8c8; transform: translateX(-5px); }
+
+    .setup-box {
+      background: #fef6e4;
+      padding: 40px;
+      border-radius: 30px;
+      max-width: 650px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .cover {
+      width: 280px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h1 { color: #555; margin-bottom: 10px; }
+    h3 { color: #ff70a6; margin-top: 20px; margin-bottom: 5px; }
+    p { color: #666; line-height: 1.6; margin: 5px 0; }
+
+    .choices {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .choice-btn {
+      padding: 15px 35px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .yes { background: #b4f8c8; color: #1e5128; }
+    .no { background: #ffa0a0; color: #611; }
+
+    hr { border: 0; border-top: 2px dashed #ddd; margin: 30px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="back-nav">
+    <a href="stories.html" class="back-btn">🔙 Kembali</a>
+  </div>
+
+  <div class="setup-box">
+    <h1>Kisah Ali & Keteladanan Utsman 🥣</h1>
+
+    <img src="images/story1/cover.jpg" class="cover" alt="Sampul Cerita">
+
+    <h3>Mengapa Cerita Ini Dibuat</h3>
+    <p>Untuk mengajarkan anak-anak bahwa menolong sesama yang kelaparan adalah perbuatan mulia, sekaligus belajar tentang kejujuran saat tidak sengaja melanggar amanah.</p>
+
+    <h3>Mengapa Cerita Ini Penting</h3>
+    <p>Cerita ini memberikan perspektif bahwa kebaikan hati harus berjalan beriringan dengan kejujuran, serta mengenalkan sifat kedermawanan Utsman bin Affan sebagai teladan nyata.</p>
+
+    <h3>Ditujukan Untuk Siapa</h3>
+    <p>Anak-anak usia 4–9 tahun dengan bimbingan orang tua.</p>
+
+    <h3>Sinopsis</h3>
+    <p style="text-align: justify; padding: 15px; border-radius: 15px; font-size: 14px;">
+      Ali ditugaskan ibunya membeli mie instan, namun di jalan ia memberikannya kepada pengemis yang kelaparan. Meski merasa cemas karena tidak menjalankan amanah ibu, Ali memilih untuk jujur. Kejujuran ini membawa Ali mendengarkan kisah hebat tentang kedermawanan <strong>Utsman bin Affan</strong>.
+    </p>
+
+    <hr>
+
+    <p><strong>Aktifkan suara narasi otomatis?</strong></p>
+
+    <div class="choices">
+      <button class="choice-btn yes" onclick="startStory(true)">Mau 😊</button>
+      <button class="choice-btn no" onclick="startStory(false)">Tidak 😴</button>
+    </div>
+  </div>
+
+  <script>
+    function startStory(choice) {
+      localStorage.setItem("autoPlay", choice ? "true" : "false");
+      window.location.href = "story1.html";
+    }
+  </script>
+
+</body>
+</html>

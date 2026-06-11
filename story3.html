@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Story 1</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/reader.css">
+</head>
+
+<body>
+
+  <!-- IMAGE -->
+  <div class="viewer">
+    <img id="comicImage" src="images/story1/page1.jpg">
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="controls">
+
+  <!-- LEFT SIDE -->
+  <a href="stories.html">
+    <button>🔙 Back</button>
+  </a>
+
+  <button onclick="goToFirst()">⏮</button>
+  <button onclick="prevPage()">⬅</button>
+
+  <!-- CENTER AREA -->
+  <div class="center-controls">
+    <span id="pageIndicator">Page 1 / 5</span>
+    <button onclick="jumpToPage()">🔢 Jump</button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <button onclick="nextPage()">➡</button>
+  <button onclick="goToLast()">⏭</button>
+
+</div>
+
+  <!-- SCRIPT -->
+  <script>
+    let currentPage = 1;
+    const totalPages = 5;
+
+    function updatePage() {
+      document.getElementById("comicImage").src =
+        `images/story3/page${currentPage}.jpg`;
+
+      document.getElementById("pageIndicator").innerText =
+        `Page ${currentPage} / ${totalPages}`;
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePage();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePage();
+      }
+    }
+
+    function goToFirst() {
+      currentPage = 1;
+      updatePage();
+    }
+
+    function goToLast() {
+      currentPage = totalPages;
+      updatePage();
+    }
+
+    function jumpToPage() {
+      let page = prompt("Enter page number:");
+      page = parseInt(page);
+
+      if (page >= 1 && page <= totalPages) {
+        currentPage = page;
+        updatePage();
+      } else {
+        alert("Invalid page number!");
+      }
+    }
+  </script>
+
+</body>
+</html>
