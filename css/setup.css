@@ -15,12 +15,12 @@ body {
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 
-  max-width: 600px;   /* 🔥 ini kunci biar gak melebar */
+  max-width: 600px;
   width: 90%;
 }
 
 .setup-box p {
-  text-align: left;   /* 🔥 biar paragraf enak dibaca */
+  text-align: left;
   line-height: 1.6;
 }
 
