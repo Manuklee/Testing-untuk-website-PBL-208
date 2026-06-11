@@ -1,0 +1,18 @@
+{
+  "title": "Kisah Utsman bin Affan",
+  "cover": "images/story1/cover.jpg",
+  "pages": [
+    {
+      "image": "images/story1/spread1.jpg",
+      "audioLeft": "audio/story1/page1left.mp3",
+      "audioRight": "audio/story1/page1right.mp3",
+      "overlays": []
+    },
+    {
+      "image": "images/story1/spread2.jpg",
+      "audioLeft": "audio/story1/page2left.mp3",
+      "audioRight": "audio/story1/page2right.mp3",
+      "overlays": []
+    }
+  ]
+}

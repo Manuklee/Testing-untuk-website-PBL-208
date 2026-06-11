@@ -1,0 +1,77 @@
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+}
+
+.topbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+
+  height:70px;
+
+  background:white;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:0 20px;
+
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+
+  z-index:999;
+}
+
+.editor-container{
+  padding-top:90px;
+
+  display:flex;
+  justify-content:center;
+}
+
+.page-view{
+  position:relative;
+
+  width:1200px;
+  max-width:95vw;
+
+  border:3px solid #ccc;
+  background:white;
+}
+
+#pageImage{
+  width:100%;
+  display:block;
+}
+
+#overlayLayer{
+  position:absolute;
+  inset:0;
+}
+
+.overlay{
+  position:absolute;
+
+  min-width:120px;
+  min-height:40px;
+
+  padding:10px;
+
+  cursor:move;
+
+  user-select:none;
+}
+
+.narration{
+  background:rgba(255,255,255,.85);
+  border:2px solid #444;
+}
+
+.speech{
+  background:white;
+  border:3px solid black;
+  border-radius:20px;
+}
