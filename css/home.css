@@ -11,12 +11,12 @@ body {
 .container {
   text-align: center;
   background: white;
-  padding: 15px;
-  border-radius: 5px;
+  padding: 30px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0px;
+  gap: 3px;
 }
 
 /* shared button style */
