@@ -1,5 +1,5 @@
 body {
-  background: lightblue;
+  background: linear-gradient(180deg, #bfe9ff 0%, #d8f7f0 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,13 +10,44 @@ body {
 
 .container {
   text-align: center;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 28px 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 10px;
+}
+
+/* text block spacing */
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.intro-text h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #2f4f6f;
+}
+
+.intro-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #4f6574;
+}
+
+/* button group spacing */
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
 }
 
 /* shared button style */
@@ -26,29 +57,32 @@ body {
   width: fit-content;
   text-decoration: none;
   font-weight: bold;
-  color: white;
-  background: #444;
-  border-radius: 10px;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  color: #2f4f6f;
+  border-radius: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.45);
 }
 
 /* bigger main button */
 .start-button {
-  padding: 16px 34px;
+  padding: 16px 36px;
   font-size: 20px;
+  background: linear-gradient(180deg, #fff3a6 0%, #ffe08a 100%);
 }
 
 /* smaller admin button */
 .admin-button {
   padding: 12px 24px;
   font-size: 16px;
+  background: linear-gradient(180deg, #c9f7d4 0%, #aeecc1 100%);
 }
 
 .start-button:hover,
 .admin-button:hover {
-  background: #222;
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
+  filter: brightness(1.02);
 }
 
 .start-button:active,
