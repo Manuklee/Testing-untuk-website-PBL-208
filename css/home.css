@@ -12,3 +12,24 @@ body {
   padding: 30px;
   border-radius: 10px;
 }
+
+.admin-button{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 24px;
+
+    background:#444;
+    color:white;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    border-radius:10px;
+
+    transition:0.2s;
+}
+
+.admin-button:hover{
+    background:#222;
+    transform:translateY(-2px);
+}
