@@ -1,6 +1,6 @@
 body {
   background: lightblue;
-  display: column;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -14,7 +14,22 @@ body {
 }
 
 .admin-button{
-    display:inline-block;
+    display:block;
+    width:fit-content;
+    margin:15px auto 0 auto;
+
+    padding:12px 24px;
+
+    background:#444;
+    color:white;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    border-radius:10px;
+
+    transition:0.2s;
+}
     margin-top:15px;
     padding:12px 24px;
 
