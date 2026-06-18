@@ -10,82 +10,70 @@ body {
 
 .container {
   text-align: center;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 28px 30px;
+  background: rgba(255,255,255,0.92);
+  padding: 30px;
   border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* text block spacing */
-.intro-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 2px;
+/* Heading */
+.container h1{
+    margin:0;
+    color:#2f4f6f;
+    font-size:2rem;
 }
 
-.intro-text h1 {
-  margin: 0;
-  font-size: 2rem;
-  color: #2f4f6f;
+/* Description */
+.container p{
+    margin:6px 0 18px;
+    color:#4f6574;
+    font-size:1rem;
 }
 
-.intro-text p {
-  margin: 0;
-  font-size: 1rem;
-  color: #4f6574;
-}
-
-/* button group spacing */
-.button-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-/* shared button style */
+/* Buttons */
 .start-button,
-.admin-button {
-  display: block;
-  width: fit-content;
-  text-decoration: none;
-  font-weight: bold;
-  color: #2f4f6f;
-  border-radius: 14px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.45);
+.admin-button{
+    display:block;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    text-decoration:none;
+    font-weight:bold;
+    color:#2f4f6f;
+    border-radius:14px;
+    border:2px solid rgba(255,255,255,.5);
+    box-shadow:0 6px 14px rgba(0,0,0,.08);
+    transition:.2s;
 }
 
-/* bigger main button */
-.start-button {
-  padding: 16px 36px;
-  font-size: 20px;
-  background: linear-gradient(180deg, #fff3a6 0%, #ffe08a 100%);
+/* Space between buttons */
+.admin-button{
+    margin-top:10px;
 }
 
-/* smaller admin button */
-.admin-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  background: linear-gradient(180deg, #c9f7d4 0%, #aeecc1 100%);
+/* Main button */
+.start-button{
+    padding:16px 36px;
+    font-size:20px;
+    background:linear-gradient(#FFF3A6,#FFE08A);
 }
 
+/* Admin button */
+.admin-button{
+    padding:12px 24px;
+    font-size:16px;
+    background:linear-gradient(#C9F7D4,#AEECC1);
+}
+
+/* Hover animation */
 .start-button:hover,
-.admin-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
-  filter: brightness(1.02);
+.admin-button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.14);
+    filter:brightness(1.05);
 }
 
 .start-button:active,
-.admin-button:active {
-  transform: translateY(0) scale(0.98);
+.admin-button:active{
+    transform:scale(.98);
 }
