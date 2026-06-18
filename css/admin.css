@@ -1,107 +1,84 @@
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f5f5f5;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
 }
 
-.topbar{
-  position:fixed;
-  top:60px;
-  left:0;
-  right:0;
-
-  height:70px;
-
-  background:white;
-
-  display:flex;
-  align-items:center;
-  gap:12px;
-
-  padding:0 20px;
-
-  box-shadow:0 2px 10px rgba(0,0,0,.1);
-
-  z-index:999;
+.return-bar {
+  padding: 15px 20px 0;
 }
 
-.editor-container{
-  padding-top:150px;
-
-  display:flex;
-  justify-content:center;
+.return-button {
+  display: inline-block;
+  background: #444;
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
-.page-view{
-  position:relative;
-
-  width:1200px;
-  max-width:95vw;
-
-  border:3px solid #ccc;
-  background:white;
+.return-button:hover {
+  background: #222;
+  transform: translateY(-2px);
 }
 
-#pageImage{
-  width:100%;
-  display:block;
+.topbar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
-#overlayLayer{
-  position:absolute;
-  inset:0;
+.editor-container {
+  padding-top: 160px;
+  display: flex;
+  justify-content: center;
 }
 
-.overlay{
-  position:absolute;
-
-  min-width:120px;
-  min-height:40px;
-
-  padding:10px;
-
-  cursor:move;
-
-  user-select:none;
+.page-view {
+  position: relative;
+  width: 1200px;
+  max-width: 95vw;
+  border: 3px solid #ccc;
+  background: white;
 }
 
-.narration{
-  background:rgba(255,255,255,.85);
-  border:2px solid #444;
+#pageImage {
+  width: 100%;
+  display: block;
 }
 
-.speech{
-  background:white;
-  border:3px solid black;
-  border-radius:20px;
+#overlayLayer {
+  position: absolute;
+  inset: 0;
 }
 
-.return-bar{
-
-    padding:15px;
-
+.overlay {
+  position: absolute;
+  min-width: 120px;
+  min-height: 40px;
+  padding: 10px;
+  cursor: move;
+  user-select: none;
 }
 
-.return-button{
-
-    display:inline-block;
-
-    background:#444;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:10px 18px;
-
-    border-radius:8px;
-
-    font-weight:bold;
-
+.narration {
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #444;
 }
 
-.return-button:hover{
-
-    background:#222;
-
+.speech {
+  background: white;
+  border: 3px solid black;
+  border-radius: 20px;
 }
