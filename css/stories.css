@@ -12,46 +12,47 @@ body{
 /* ===== MORNING ===== */
 
 body.morning{
-    background:linear-gradient(
+    background: linear-gradient(
         180deg,
-        #E9FFF7 0%,
-        #F7FFF2 50%,
-        #FFF7DD 100%
-    );
-}
-
-/* ===== DAY ===== */
-
-body.day{
-    background:linear-gradient(
-        180deg,
-        #D9FFF6 0%,
-        #F8FFE6 50%,
-        #FFF4CC 100%
+        #F6E3BE 0%,
+        #F8EBCF 45%,
+        #FFF6E8 100%
     );
 }
 
 /* ===== AFTERNOON ===== */
 
-body.afternoon{
-    background:linear-gradient(
+body.day{
+    background: linear-gradient(
         180deg,
-        #FFE7C7 0%,
-        #FFF0D8 50%,
-        #FFF9EC 100%
+        #DCEFD6 0%,
+        #EDF6E8 50%,
+        #FFFDF3 100%
+    );
+}
+
+/* ===== EVENING ===== */
+
+body.afternoon{
+    background: linear-gradient(
+        180deg,
+        #E88A49 0%,
+        #F5B678 50%,
+        #FFE9C8 100%
     );
 }
 
 /* ===== NIGHT ===== */
 
 body.night{
-    background:linear-gradient(
+    background: linear-gradient(
         180deg,
-        #4D5DAE 0%,
-        #6C6CC8 50%,
-        #8A78D9 100%
+        #F27D6A 0%,
+        #C96EB5 50%,
+        #7B67C8 100%
     );
 }
+
 /* Text colors */
 
 h1{
