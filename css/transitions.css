@@ -1,0 +1,17 @@
+body{
+    opacity:0;
+    transform:translateY(70px);
+    transition:
+        opacity .55s,
+        transform .55s cubic-bezier(.22,.61,.36,1);
+}
+
+body.page-loaded{
+    opacity:1;
+    transform:translateY(0);
+}
+
+body.page-exit{
+    opacity:0;
+    transform:translateY(-70px);
+}
