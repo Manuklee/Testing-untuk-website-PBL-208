@@ -1,11 +1,11 @@
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #bfe9ff 0%, #d8f7f0 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background 0.6s ease;
 }
 
 .container {
@@ -66,4 +66,86 @@ body {
 .start-button:active,
 .admin-button:active {
   transform: scale(0.98);
+}
+
+body.morning{
+    background:linear-gradient(180deg,#FFE9B5 0%,#BEEBFF 100%);
+}
+
+body.morning h1{
+    color:#A35A00;
+}
+
+body.morning p{
+    color:#6F5A3A;
+}
+
+body.morning .start-button{
+    background:linear-gradient(180deg,#FFD966,#FFC94A);
+}
+
+body.morning .admin-button{
+    background:linear-gradient(180deg,#CFF4D2,#A8E6B2);
+}
+
+body.day{
+    background:linear-gradient(180deg,#AEE4FF 0%,#D8F7F0 100%);
+}
+
+body.day h1{
+    color:#2467A8;
+}
+
+body.day p{
+    color:#496A88;
+}
+
+body.day .start-button{
+    background:linear-gradient(180deg,#FFF3A6,#FFE08A);
+}
+
+body.day .admin-button{
+    background:linear-gradient(180deg,#C9F7D4,#AEECC1);
+}
+
+body.afternoon{
+    background:linear-gradient(180deg,#FFD0A8 0%,#FFDFAF 100%);
+}
+
+body.afternoon h1{
+    color:#B85C38;
+}
+
+body.afternoon p{
+    color:#85543C;
+}
+
+body.afternoon .start-button{
+    background:linear-gradient(180deg,#FFD59A,#FFBE7A);
+}
+
+body.afternoon .admin-button{
+    background:linear-gradient(180deg,#FFE7B8,#FFD58F);
+}
+
+body.night{
+    background:linear-gradient(180deg,#102A5C 0%,#1D3C7B 100%);
+}
+
+body.night h1{
+    color:#F4F4FF;
+}
+
+body.night p{
+    color:#D6DDFB;
+}
+
+body.night .start-button{
+    background:linear-gradient(180deg,#7E8CFF,#5D6DDB);
+    color:white;
+}
+
+body.night .admin-button{
+    background:linear-gradient(180deg,#8B7CFF,#6E63DB);
+    color:white;
 }
