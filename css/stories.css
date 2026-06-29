@@ -12,44 +12,44 @@ body{
 /* ===== MORNING ===== */
 
 body.morning{
-    background: linear-gradient(
+    background:linear-gradient(
         180deg,
-        #F6E3BE 0%,
-        #F8EBCF 45%,
-        #FFF6E8 100%
+        #f6fff8 0%,
+        #fcfff8 45%,
+        #fffdf4 100%
+    );
+}
+
+/* ===== DAY ===== */
+
+body.day{
+    background:linear-gradient(
+        180deg,
+        #eefef7 0%,
+        #f8fff9 45%,
+        #fffef8 100%
     );
 }
 
 /* ===== AFTERNOON ===== */
 
-body.day{
-    background: linear-gradient(
-        180deg,
-        #DCEFD6 0%,
-        #EDF6E8 50%,
-        #FFFDF3 100%
-    );
-}
-
-/* ===== EVENING ===== */
-
 body.afternoon{
-    background: linear-gradient(
+    background:linear-gradient(
         180deg,
-        #E88A49 0%,
-        #F5B678 50%,
-        #FFE9C8 100%
+        #fff8eb 0%,
+        #fffdf3 45%,
+        #ffffff 100%
     );
 }
 
 /* ===== NIGHT ===== */
 
 body.night{
-    background: linear-gradient(
+    background:linear-gradient(
         180deg,
-        #F27D6A 0%,
-        #C96EB5 50%,
-        #7B67C8 100%
+        #5b4ca8 0%,
+        #7265bb 45%,
+        #9285d3 100%
     );
 }
 
