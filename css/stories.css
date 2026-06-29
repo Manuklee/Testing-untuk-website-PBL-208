@@ -1,4 +1,45 @@
-body {
+body{
+    transition:background .6s ease;
+}
+
+/* MORNING */
+
+body.morning{
+background:linear-gradient(180deg,#bfe9ff,#d8f7f0);
+}
+
+/* DAY */
+
+body.day{
+background:linear-gradient(180deg,#7fd6ff,#b7fff1);
+}
+
+/* AFTERNOON */
+
+body.afternoon{
+background:linear-gradient(180deg,#ffd4a3,#ffe9c8);
+}
+
+/* NIGHT */
+
+body.night{
+background:
+radial-gradient(circle at top,
+rgba(255,255,255,.08),
+transparent 40%),
+linear-gradient(
+180deg,
+#14224d 0%,
+#273b7a 45%,
+#5b4ca8 100%);
+}
+
+body.night h1,
+body.night h2,
+body.night p{
+color:white;
+}
+
   text-align: center;
   background: #f0f8ff;
 }
