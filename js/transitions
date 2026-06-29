@@ -1,33 +1,43 @@
-window.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-    document.body.classList.add("page-loaded");
+    // Start slightly below
+    document.body.classList.add("page-enter");
 
-});
+    // Allow browser to draw one frame first
+    requestAnimationFrame(() => {
 
-document.querySelectorAll("a").forEach(link=>{
+        document.body.classList.add("page-loaded");
+        document.body.classList.remove("page-enter");
 
-    link.addEventListener("click",e=>{
+    });
 
-        const href=link.getAttribute("href");
+    // Intercept links
+    document.querySelectorAll("a[href]").forEach(link => {
 
-        if(
-            !href ||
-            href.startsWith("#") ||
-            href.startsWith("javascript:")
-        ){
-            return;
-        }
+        link.addEventListener("click", function(e){
 
-        e.preventDefault();
+            const href = this.getAttribute("href");
 
-        document.body.classList.remove("page-loaded");
-        document.body.classList.add("page-exit");
+            // Ignore anchors or javascript links
+            if(
+                href.startsWith("#") ||
+                href.startsWith("javascript:")
+            ){
+                return;
+            }
 
-        setTimeout(()=>{
+            e.preventDefault();
 
-            window.location.href=href;
+            document.body.classList.remove("page-loaded");
+            document.body.classList.add("page-exit");
 
-        },550);
+            setTimeout(() => {
+
+                window.location.href = href;
+
+            },550);
+
+        });
 
     });
 
