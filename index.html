@@ -8,12 +8,35 @@
 <body>
 
   <div class="container">
-    <h1>Selamat Datang 🌟</h1>
+    <h1 id="greeting">Selamat Datang 🌟</h1>
     <p>Tekan tombol dibawah untuk mulai membaca!</p>
 
     <a href="stories.html" class="start-button">Mulai Membaca</a>
     <a href="admin.html" class="admin-button">Edit Konten</a>
   </div>
+
+  <script>
+const hour = new Date().getHours();
+
+const greeting = document.getElementById("greeting");
+
+if (hour >= 5 && hour < 11) {
+    document.body.classList.add("morning");
+    greeting.textContent = "Selamat Pagi 🌅";
+}
+else if (hour >= 11 && hour < 15) {
+    document.body.classList.add("day");
+    greeting.textContent = "Selamat Siang ☀️";
+}
+else if (hour >= 15 && hour < 18) {
+    document.body.classList.add("afternoon");
+    greeting.textContent = "Selamat Sore 🌇";
+}
+else {
+    document.body.classList.add("night");
+    greeting.textContent = "Selamat Malam 🌙";
+}
+</script>
 
 </body>
 </html>
