@@ -68,89 +68,46 @@ body {
   transform: scale(0.98);
 }
 
+/* ===== MORNING ===== */
+
 body.morning{
-    background:linear-gradient(180deg,#FFE9B5 0%,#BEEBFF 100%);
+    background:linear-gradient(
+        180deg,
+        #A8DFFF 0%,
+        #CFEFFF 50%,
+        #E9FFF7 100%
+    );
 }
 
-body.morning h1{
-    color:#A35A00;
-}
-
-body.morning p{
-    color:#6F5A3A;
-}
-
-body.morning .start-button{
-    background:linear-gradient(180deg,#FFD966,#FFC94A);
-}
-
-body.morning .admin-button{
-    background:linear-gradient(180deg,#CFF4D2,#A8E6B2);
-}
+/* ===== DAY ===== */
 
 body.day{
-    background:linear-gradient(180deg,#AEE4FF 0%,#D8F7F0 100%);
+    background:linear-gradient(
+        180deg,
+        #73D8FF 0%,
+        #A9F1FF 50%,
+        #D9FFF6 100%
+    );
 }
 
-body.day h1{
-    color:#2467A8;
-}
-
-body.day p{
-    color:#496A88;
-}
-
-body.day .start-button{
-    background:linear-gradient(180deg,#FFF3A6,#FFE08A);
-}
-
-body.day .admin-button{
-    background:linear-gradient(180deg,#C9F7D4,#AEECC1);
-}
+/* ===== AFTERNOON ===== */
 
 body.afternoon{
-    background:linear-gradient(180deg,#FFD0A8 0%,#FFDFAF 100%);
+    background:linear-gradient(
+        180deg,
+        #FFC88E 0%,
+        #FFD7A8 50%,
+        #FFE7C7 100%
+    );
 }
 
-body.afternoon h1{
-    color:#B85C38;
-}
+/* ===== NIGHT ===== */
 
-body.afternoon p{
-    color:#85543C;
-}
-
-body.afternoon .start-button{
-    background:linear-gradient(180deg,#FFD59A,#FFBE7A);
-}
-
-body.afternoon .admin-button{
-    background:linear-gradient(180deg,#FFE7B8,#FFD58F);
-}
-
-body.night {
-  background: linear-gradient(180deg, #1f2a5a 0%, #4b3f8f 100%);
-}
-
-body.night .container {
-  background: rgba(27, 36, 74, 0.94);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-}
-
-body.night h1 {
-  color: #ffffff;
-}
-
-body.night p {
-  color: #dce8ff;
-}
-
-body.night .start-button {
-  background: linear-gradient(180deg, #8db7ff 0%, #6d8cff 100%);
-  color: white;
-}
-
-body.night .admin-button {
-  background: linear-gradient(180deg, #c3a5ff 0%, #9a82f8 100%);
-  color: white;
+body.night{
+    background:linear-gradient(
+        180deg,
+        #10244A 0%,
+        #2D3F82 50%,
+        #4D5DAE 100%
+    );
 }
