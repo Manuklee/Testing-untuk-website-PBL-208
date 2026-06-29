@@ -1,17 +1,28 @@
+/* Default state (visible) */
 body{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Animation when page first loads */
+body.page-enter{
     opacity:0;
     transform:translateY(70px);
-    transition:
-        opacity .55s,
-        transform .55s cubic-bezier(.22,.61,.36,1);
 }
 
 body.page-loaded{
     opacity:1;
     transform:translateY(0);
+    transition:
+        opacity .55s ease,
+        transform .55s cubic-bezier(.22,.61,.36,1);
 }
 
+/* Animation when leaving */
 body.page-exit{
     opacity:0;
     transform:translateY(-70px);
+    transition:
+        opacity .55s ease,
+        transform .55s cubic-bezier(.22,.61,.36,1);
 }
